@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "D:\\Proyectos\\SlimeVR-Rehabilitaciion\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Proyectos\\SlimeVR-Rehabilitaciion\\Assets\\EVMC4U\\ExternalReceiver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\EVMC4U\\ExternalReceiver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|d:\\proyectos\\slimevr-rehabilitaciion\\assets\\scripts\\lector_distancias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\lector_distancias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Proyectos\\SlimeVR-Rehabilitaciion\\Assets\\Scripts\\Detector_Colisiones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Detector_Colisiones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ExternalReceiver.cs",
-              "DocumentMoniker": "D:\\Proyectos\\SlimeVR-Rehabilitaciion\\Assets\\EVMC4U\\ExternalReceiver.cs",
-              "RelativeDocumentMoniker": "Assets\\EVMC4U\\ExternalReceiver.cs",
-              "ToolTip": "D:\\Proyectos\\SlimeVR-Rehabilitaciion\\Assets\\EVMC4U\\ExternalReceiver.cs*",
-              "RelativeToolTip": "Assets\\EVMC4U\\ExternalReceiver.cs*",
-              "ViewState": "AgIAAFsFAAAAAAAAAAAswMcEAABRAAAAAAAAAA==",
+              "Title": "Lector_Distancias.cs",
+              "DocumentMoniker": "D:\\Proyectos\\SlimeVR-Rehabilitaciion\\Assets\\Scripts\\Lector_Distancias.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Lector_Distancias.cs",
+              "ToolTip": "D:\\Proyectos\\SlimeVR-Rehabilitaciion\\Assets\\Scripts\\Lector_Distancias.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Lector_Distancias.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwB4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-21T23:05:07.094Z",
+              "WhenOpened": "2026-01-22T22:35:33.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Detector_Colisiones.cs",
+              "DocumentMoniker": "D:\\Proyectos\\SlimeVR-Rehabilitaciion\\Assets\\Scripts\\Detector_Colisiones.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Detector_Colisiones.cs",
+              "ToolTip": "D:\\Proyectos\\SlimeVR-Rehabilitaciion\\Assets\\Scripts\\Detector_Colisiones.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Detector_Colisiones.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T00:24:56.548Z",
               "EditorCaption": ""
             }
           ]

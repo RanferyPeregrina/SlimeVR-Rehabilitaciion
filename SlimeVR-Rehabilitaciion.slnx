@@ -4,6 +4,7 @@
   <Project Path="VRM10.csproj" />
   <Project Path="VRMShaders.GLTF.IO.Editor.csproj" />
   <Project Path="UniGLTF.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="FastSpringBone.csproj" />
   <Project Path="UniVRM.Editor.csproj" />
   <Project Path="VRM.csproj" />
@@ -16,7 +17,6 @@
   <Project Path="VRMShaders.GLTF.IO.Runtime.csproj" />
   <Project Path="VrmLib.csproj" />
   <Project Path="UniGLTF.Tests.csproj" />
-  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="FastSpringBone10.csproj" />
   <Project Path="UniGLTF.Utils.csproj" />
   <Project Path="uOSC.Editor.csproj" />
