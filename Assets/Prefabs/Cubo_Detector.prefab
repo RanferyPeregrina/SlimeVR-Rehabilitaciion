@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f096ac1f9af3344eae8a899a89e77a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Detector_Colisiones
+  ParteCuerpo: {fileID: 0}
 --- !u!54 &235155336244732026
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -148,8 +149,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0

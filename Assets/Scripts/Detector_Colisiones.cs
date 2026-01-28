@@ -3,8 +3,20 @@ using UnityEngine.SceneManagement;
 
 public class Detector_Colisiones : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    private Animator animator;
+    public Transform ParteCuerpo;
+
+    public void Start()
     {
-        Debug.Log("Objeto tocado");
+        animator = GetComponent<Animator>(); //Ubica el cuerpo
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.transform.IsChildOf(GameObject.Find("Rehabi0-0").transform))
+        {
+            Debug.Log("Parte del cuerpo: " + collision.collider.name);
+        }
+    }
+
 }
