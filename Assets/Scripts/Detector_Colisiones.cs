@@ -15,6 +15,7 @@ public class Detector_Colisiones : MonoBehaviour
     {
         if (collision.collider.transform.IsChildOf(GameObject.Find("Rehabi0-0").transform))
         {
+            Debug.Log($"Colisión con: {collision.collider.name}");
             Debug.Log("Parte del cuerpo: " + collision.collider.name);
         }
     }
