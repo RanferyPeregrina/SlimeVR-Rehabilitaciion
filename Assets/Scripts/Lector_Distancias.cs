@@ -10,24 +10,12 @@ public class Lector_Distancias : MonoBehaviour
     public TMPro.TMP_Text Texto_Distancia;
     public TMPro.TMP_Text Texto_Estado;
     private Animator animator;
-    private Transform chest;
-    private Transform leftThigh;
+    private Transform pecho;
+    private Transform rodillaIzquierda;
     public Image Cuadrito_Fondo;
+    string EstadoActual, EstadoPasado;
+    int Repeticiones = 0;
 
-
-<<<<<<< Updated upstream
-    public void Start() //----------------------- Esta función inicializa todo
-    {
-        animator = GetComponent<Animator>(); //Ubica el cuerpo
-
-        chest = animator.GetBoneTransform(HumanBodyBones.Chest);            //Ubica el pecho
-        leftThigh = animator.GetBoneTransform(HumanBodyBones.LeftUpperLeg); //Ubica el muslo
-
-        if (chest == null || leftThigh == null)     // Si no los encuentra, avisa.
-        {
-            Debug.LogError("No se encontraron los huesos necesarios");
-        }
-=======
 
     public void Start() 
         // Validaciones iniciales de componentes - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
@@ -38,45 +26,33 @@ public class Lector_Distancias : MonoBehaviour
         
         // Si no los encuentra, avisa.
         if (pecho == null || rodillaIzquierda == null){Debug.LogError("No se encontraron los huesos necesarios");}
->>>>>>> Stashed changes
     }
 
-    public void Update() //------------------------ Esta función va midiendo e imprimiendo
+    public void Update() //------------------------ Esta funciï¿½n va midiendo e imprimiendo
     {
-<<<<<<< Updated upstream
-
-        if (chest == null || leftThigh == null) return; // Si no los encuentra, no hace na'
-
-
-        float Distancia = Vector3.Distance(chest.position, leftThigh.position);
-        Debug.Log($"Distancia muslo-pecho: {Distancia:F3}");    //Imprime la distancia en la consola.
-        Texto_Distancia.text = Distancia.ToString();            //Imprime la distancia en el texto que identificamos al principio
-                                                                //En el mundo lo asigné a "TXT_Distancia"
-=======
         if (pecho == null || rodillaIzquierda == null) return; // Si no los encuentra, no hace na'
-        Debug.DrawLine(pecho.position, rodillaIzquierda.position, Color.red);
 
-
-        // Asume posiciones y velocidades de las cosas - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         float distanciaActual = Vector3.Distance(pecho.position, rodillaIzquierda.position);
-        //Debug.Log($"Distancia muslo-pecho: {distanciaActual:F3}");  
+
+
+        // Todo esto es la maquinita de estados.
+        if (distanciaActual <= 0.490)                   //Si la distancia pierna-pecho es corta
+        {                                               //entonces subiÃ³
+            EstadoActual = "Arriba";
+        } else if (distanciaActual >= 0.610)            //Si la distnacia pierna-pecho es larga
+        {                                               //entonces bajÃ³
+            EstadoActual = "Abajo";
+            if(EstadoPasado == "Arriba") { Repeticiones++; }  //Si repetiste ese movimiento, hiciste una repeticiÃ³n.
+        }
+        EstadoPasado = EstadoActual;
+
+        Debug.DrawLine(pecho.position, rodillaIzquierda.position, Color.red);
         Texto_Distancia.text = distanciaActual.ToString();            //Imprime la distancia en el texto que identificamos al principio
->>>>>>> Stashed changes
-
-
-        if (Distancia <= 0.247)
-        {
-            Texto_Estado.text = "Abajo";
-        }
-        else
-        {
-            if(Distancia >= 0.247)
-            {
-                Texto_Estado.text = "Arriba";
-            }
-        }
-
+        Texto_Estado.text = EstadoActual.ToString();
+        Debug.Log($"Las repeticiones hasta ahora son: {Repeticiones}");
     }
+
+
 
     
 }
