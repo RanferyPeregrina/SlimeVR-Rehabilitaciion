@@ -15,6 +15,7 @@ public class Lector_Distancias : MonoBehaviour
     public Image Cuadrito_Fondo;
 
 
+<<<<<<< Updated upstream
     public void Start() //----------------------- Esta función inicializa todo
     {
         animator = GetComponent<Animator>(); //Ubica el cuerpo
@@ -26,10 +27,23 @@ public class Lector_Distancias : MonoBehaviour
         {
             Debug.LogError("No se encontraron los huesos necesarios");
         }
+=======
+
+    public void Start() 
+        // Validaciones iniciales de componentes - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+    {
+        animator = GetComponent<Animator>();                                //Ubica el cuerpo
+        pecho = animator.GetBoneTransform(HumanBodyBones.Chest);            //Ubica el pecho
+        rodillaIzquierda = animator.GetBoneTransform(HumanBodyBones.LeftLowerLeg); //Ubica el muslo
+        
+        // Si no los encuentra, avisa.
+        if (pecho == null || rodillaIzquierda == null){Debug.LogError("No se encontraron los huesos necesarios");}
+>>>>>>> Stashed changes
     }
 
     public void Update() //------------------------ Esta función va midiendo e imprimiendo
     {
+<<<<<<< Updated upstream
 
         if (chest == null || leftThigh == null) return; // Si no los encuentra, no hace na'
 
@@ -38,6 +52,16 @@ public class Lector_Distancias : MonoBehaviour
         Debug.Log($"Distancia muslo-pecho: {Distancia:F3}");    //Imprime la distancia en la consola.
         Texto_Distancia.text = Distancia.ToString();            //Imprime la distancia en el texto que identificamos al principio
                                                                 //En el mundo lo asigné a "TXT_Distancia"
+=======
+        if (pecho == null || rodillaIzquierda == null) return; // Si no los encuentra, no hace na'
+        Debug.DrawLine(pecho.position, rodillaIzquierda.position, Color.red);
+
+
+        // Asume posiciones y velocidades de las cosas - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        float distanciaActual = Vector3.Distance(pecho.position, rodillaIzquierda.position);
+        //Debug.Log($"Distancia muslo-pecho: {distanciaActual:F3}");  
+        Texto_Distancia.text = distanciaActual.ToString();            //Imprime la distancia en el texto que identificamos al principio
+>>>>>>> Stashed changes
 
 
         if (Distancia <= 0.247)
