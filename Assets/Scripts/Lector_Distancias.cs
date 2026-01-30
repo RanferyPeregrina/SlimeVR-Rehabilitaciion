@@ -22,16 +22,15 @@ public class Lector_Distancias : MonoBehaviour
     {
         animator = GetComponent<Animator>();                                //Ubica el cuerpo
         pecho = animator.GetBoneTransform(HumanBodyBones.Chest);            //Ubica el pecho
-        rodillaIzquierda = animator.GetBoneTransform(HumanBodyBones.LeftLowerLeg); //Ubica el muslo
+        rodillaIzquierda = animator.GetBoneTransform(HumanBodyBones.LeftLowerLeg); //Ubica la rodilla
         
         // Si no los encuentra, avisa.
         if (pecho == null || rodillaIzquierda == null){Debug.LogError("No se encontraron los huesos necesarios");}
     }
 
-    public void Update() //------------------------ Esta funci�n va midiendo e imprimiendo
+    public void Update() //------------------------ Esta funcion va midiendo e imprimiendo
     {
         if (pecho == null || rodillaIzquierda == null) return; // Si no los encuentra, no hace na'
-
         float distanciaActual = Vector3.Distance(pecho.position, rodillaIzquierda.position);
 
 
@@ -42,13 +41,13 @@ public class Lector_Distancias : MonoBehaviour
         } else if (distanciaActual >= 0.610)            //Si la distnacia pierna-pecho es larga
         {                                               //entonces bajó
             EstadoActual = "Abajo";
-            if(EstadoPasado == "Arriba") { Repeticiones++; }  //Si repetiste ese movimiento, hiciste una repetición.
+            if(EstadoPasado == "Arriba") { Repeticiones++; }  //Si repetiste ese movimiento, cuenta una repetición.
         }
         EstadoPasado = EstadoActual;
 
         Debug.DrawLine(pecho.position, rodillaIzquierda.position, Color.red);
-        Texto_Distancia.text = distanciaActual.ToString();            //Imprime la distancia en el texto que identificamos al principio
-        Texto_Estado.text = EstadoActual.ToString();
+        Texto_Distancia.text = distanciaActual.ToString();            //Imprime la distancia.
+        Texto_Estado.text = EstadoActual.ToString();                  //Imprime las reperticiones.
         Debug.Log($"Las repeticiones hasta ahora son: {Repeticiones}");
     }
 
