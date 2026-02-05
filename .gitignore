@@ -10,6 +10,18 @@
 # ======== Documentación ======
 Documentación
 
+# ========== Recursos ==========
+.obj
+*.obj
+*.fbx
+*.blend
+*.psd
+Assets/Modelos3D/
+Assets/Modelos3D/E_pesas.obj
+Assets/Modelos3D/Estante_pelotas.obj
+Assets/Modelos3D/Estante_pesas.obj
+Assets/AssetsPesados/
+
 # Asset Store tools cache
 [Uu]serSettings/
 
@@ -22,8 +34,6 @@ Documentación
 *.userprefs
 *.pidb
 *.booproj
-
-
 
 
 
@@ -41,19 +51,12 @@ sysinfo.txt
 *.swp
 .vsdix
 
-# ========== Recursos ==========
-.obj
-*.obj
-*.fbx
-*.blend
-*.psd
-Assets/Modelos3D/
-Assets/Modelos3D/E_pesas.obj
-Assets/Modelos3D/Estante_pelotas.obj
-Assets/Modelos3D/Estante_pesas.obj
-Assets/AssetsPesados/
-
 # ========== OS ==========
 Thumbs.db
-.vs/SlimeVR-Rehabilitaciion.slnx/FileContentIndex/a788326f-cb3c-4a18-b0af-cd93901fab59.vsidx
-*.bin
+.vs/SlimeVR-Rehabilitaciion.slnx/FileContentIndex/bf4a8e02-65de-4ef1-9be1-17191b929e8b.vsidx
+*.vsidx
+*.vsidx
+*.v2
+.vs/ProjectEvaluation/slimevr-rehabilitaciion.strings.v10.bin
+.vs/ProjectEvaluation/slimevr-rehabilitaciion.projects.v10.bin
+.vs/ProjectEvaluation/slimevr-rehabilitaciion.metadata.v10.bin
