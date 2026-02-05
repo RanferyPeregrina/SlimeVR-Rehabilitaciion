@@ -10,18 +10,6 @@
 # ======== Documentación ======
 Documentación
 
-# ========== Recursos ==========
-.obj
-*.obj
-*.fbx
-*.blend
-*.psd
-Assets/Modelos3D/
-Assets/Modelos3D/E_pesas.obj
-Assets/Modelos3D/Estante_pelotas.obj
-Assets/Modelos3D/Estante_pesas.obj
-Assets/AssetsPesados/
-
 # Asset Store tools cache
 [Uu]serSettings/
 
@@ -61,3 +49,4 @@ Thumbs.db
 .vs/ProjectEvaluation/slimevr-rehabilitaciion.projects.v10.bin
 .vs/ProjectEvaluation/slimevr-rehabilitaciion.metadata.v10.bin
 *.meta
+*.obj
