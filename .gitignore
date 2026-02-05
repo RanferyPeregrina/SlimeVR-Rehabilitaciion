@@ -23,6 +23,10 @@ Documentación
 *.pidb
 *.booproj
 
+
+
+
+
 # Unity meta (NO ignorar .meta en general)
 .DS_Store
 
@@ -31,8 +35,23 @@ sysinfo.txt
 
 # ========== IDEs ==========
 .vscode/
+*.vs/
+.vsidx
 .idea/
 *.swp
+.vsdix
+
+# ========== Recursos ==========
+.obj
+*.obj
+*.fbx
+*.blend
+*.psd
+Assets/Modelos3D/
+Assets/Modelos3D/E_pesas.obj
+Assets/Modelos3D/Estante_pelotas.obj
+Assets/Modelos3D/Estante_pesas.obj
+Assets/AssetsPesados/
 
 # ========== OS ==========
 Thumbs.db
