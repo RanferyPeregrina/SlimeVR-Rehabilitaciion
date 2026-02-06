@@ -827,8 +827,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Seleccione la escena que quiere reproducir
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 081d4f726c2aa3247a339622912c7728, type: 2}
-  m_sharedMaterial: {fileID: 528902350266850636, guid: 081d4f726c2aa3247a339622912c7728, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ab025e0ca5e593d4cb2ca3fa41447036, type: 2}
+  m_sharedMaterial: {fileID: 528902350266850636, guid: ab025e0ca5e593d4cb2ca3fa41447036, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1024,7 +1024,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1588901959}
+      - m_Target: {fileID: 1588901960}
         m_TargetAssemblyTypeName: MenuPrincipal, Assembly-CSharp
         m_MethodName: Regresar
         m_Mode: 1
@@ -1611,8 +1611,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Programa de rehabilitaci\xF3n f\xEDsica para deportistas con"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 081d4f726c2aa3247a339622912c7728, type: 2}
-  m_sharedMaterial: {fileID: 528902350266850636, guid: 081d4f726c2aa3247a339622912c7728, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ab025e0ca5e593d4cb2ca3fa41447036, type: 2}
+  m_sharedMaterial: {fileID: 528902350266850636, guid: ab025e0ca5e593d4cb2ca3fa41447036, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1738,7 +1738,6 @@ GameObject:
   - component: {fileID: 1588901955}
   - component: {fileID: 1588901959}
   - component: {fileID: 1588901960}
-  - component: {fileID: 1588901961}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1857,22 +1856,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74a0bb5aabf2ef84a9992a9365644bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuPrincipal
-  UIPrincipal: {fileID: 0}
-  UISeleccion: {fileID: 0}
---- !u!114 &1588901961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1588901954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74a0bb5aabf2ef84a9992a9365644bfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MenuPrincipal
-  UIPrincipal: {fileID: 0}
-  UISeleccion: {fileID: 0}
+  UIPrincipal: {fileID: 971904393}
+  UISeleccion: {fileID: 1583457722}
 --- !u!1 &1621079686
 GameObject:
   m_ObjectHideFlags: 0
