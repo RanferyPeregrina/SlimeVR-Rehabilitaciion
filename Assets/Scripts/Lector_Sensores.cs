@@ -1,68 +1,59 @@
+//Este script es para medir e imprimir en el Canvas la distancia entre 2 partes del cuerpo.
+//Este script va pegado al VRM al que le queremos medir las distancias.
+
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
+
 
 public class Lector_Sensores : MonoBehaviour
 {
-    [Header("Referencias de UI")]
-    public TMP_Text Texto_Distancia;
-    public TMP_Text Texto_Estado;
+    public TMPro.TMP_Text Texto_Distancia1;
+    public TMPro.TMP_Text Texto_Estado1;
+    private Animator CuerpoMono;
+    private Transform pierna_derecha;
+    private Transform mano_derecha;
     public Image Cuadrito_Fondo;
+    string EstadoActual1, EstadoPasado1;
+    int Repeticiones1 = 0;
 
-    [Header("Configuración del Ejercicio")]
-    [Tooltip("Distancia en metros para considerar que el brazo está cerca de la pierna")]
-    public float umbralCerca = 0.45f; 
 
-    private Animator animator;
-    private Transform brazoDerecho; // Sensor arriba del codo (RightUpperArm)
-    private Transform piernaDerecha; // Sensor en la pierna (RightLowerLeg)
-
-    void Start() 
+    public void Start()
+    // Validaciones iniciales de componentes - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
     {
-        animator = GetComponent<Animator>();
-        
-        if (animator == null)
-        {
-            Debug.LogError("No se encontró el componente Animator en este objeto.");
-            return;
-        }
+        CuerpoMono = GetComponent<Animator>();                                //Ubica el cuerpo
+        pierna_derecha = CuerpoMono.GetBoneTransform(HumanBodyBones.RightLowerLeg);            //Ubica pierna derecha
+        mano_derecha = CuerpoMono.GetBoneTransform(HumanBodyBones.RightLowerArm); //Ubica la mano derecha
 
-        // Buscamos los huesos correspondientes a la ubicación de tus sensores SlimeVR
-        brazoDerecho = animator.GetBoneTransform(HumanBodyBones.RightUpperArm); 
-        piernaDerecha = animator.GetBoneTransform(HumanBodyBones.RightLowerLeg); 
-
-        if (brazoDerecho == null || piernaDerecha == null)
-        {
-            Debug.LogError("Error: No se pudieron encontrar los huesos. Revisa que el avatar sea 'Humanoid'.");
-        }
+        // Si no los encuentra, avisa.
+        if (pierna_derecha == null || mano_derecha == null) { Debug.LogError("No se encontraron los huesos necesarios"); }
     }
 
-    void Update() 
+    public void Update() //------------------------ Esta funcion va midiendo e imprimiendo
     {
-        if (brazoDerecho == null || piernaDerecha == null) return;
+        if (pierna_derecha == null || mano_derecha == null) return; // Si no los encuentra, no hace na'
+        float distanciaActual1 = Vector3.Distance(pierna_derecha.position, mano_derecha.position);
 
-        // Calculamos la distancia real en el espacio 3D
-        float distanciaActual = Vector3.Distance(brazoDerecho.position, piernaDerecha.position);
-        
-        // Dibujamos una línea en la ventana de Scene para depuración
-        Debug.DrawLine(brazoDerecho.position, piernaDerecha.position, Color.yellow);
 
-        // Actualizamos el texto en pantalla
-        if (Texto_Distancia != null)
-        {
-            Texto_Distancia.text = "Distancia: " + distanciaActual.ToString("F2") + " m";
+        // Todo esto es la maquinita de estados.
+        if (distanciaActual1 >= 0.90)                   //Si la distancia pierna-brazo es larga
+        {                                               //entonces subió
+            EstadoActual1 = "Arriba";
         }
+        else if (distanciaActual1 <= 0.65)            //Si la distnacia pierna-brazo es corta
+        {                                               //entonces bajó
+            EstadoActual1 = "Abajo";
+            if (EstadoPasado1 == "Arriba") { Repeticiones1++; }  //Si repetiste ese movimiento, cuenta una repetición.
+        }
+        EstadoPasado1 = EstadoActual1;
 
-        // Lógica de detección según el umbral
-        if (distanciaActual <= umbralCerca)
-        {
-            Texto_Estado.text = "ESTADO: ABAJO";
-            if (Cuadrito_Fondo != null) Cuadrito_Fondo.color = Color.green;
-        }
-        else
-        {
-            Texto_Estado.text = "ESTADO: ARRIBA";
-            if (Cuadrito_Fondo != null) Cuadrito_Fondo.color = Color.white;
-        }
+        Debug.DrawLine(pierna_derecha.position, mano_derecha.position, Color.red);
+        Texto_Distancia1.text = distanciaActual1.ToString();            //Imprime la distancia.
+        Texto_Estado1.text = EstadoActual1.ToString();                  //Imprime las reperticiones.
+        Debug.Log($"Las repeticiones hasta ahora son: {Repeticiones1}");
     }
+
+
+
+
 }
+
