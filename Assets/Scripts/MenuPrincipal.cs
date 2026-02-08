@@ -6,7 +6,7 @@ public class MenuPrincipal : MonoBehaviour
     public GameObject UIPrincipal;
     public GameObject UISeleccion;
 
-
+    // Menú principal
     public void Start()
     {
         UIPrincipal.SetActive(true);
@@ -19,16 +19,28 @@ public class MenuPrincipal : MonoBehaviour
         UISeleccion.SetActive(true);
     }
 
+    public void QuitarJuego()
+    {
+        Application.Quit();
+    }
+
+
+    // Selección de ejercicios
     public void Regresar()
     {
         UIPrincipal.SetActive(true);
         UISeleccion.SetActive(false);
     }
 
-    public void QuitarJuego()
+    public void CargarRodilla1()
     {
-        Application.Quit();
+        SceneManager.LoadScene("EjerciciosRodillas");
     }
+    public void CargarHombros1()
+    {
+        SceneManager.LoadScene("EjerciciosHombros");
+    }
+
 
 
 }
