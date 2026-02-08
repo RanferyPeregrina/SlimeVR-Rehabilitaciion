@@ -762,6 +762,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 2244799536192673533, guid: 51920731a2f3beb40be1ad61bb57b714, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3583691400664572212, guid: 51920731a2f3beb40be1ad61bb57b714, type: 3}
+      propertyPath: m_text
+      value: "Ejercicio de rehabilitaci\xF3n de hombro (derecho)"
+      objectReference: {fileID: 0}
     - target: {fileID: 4152407430572837876, guid: 51920731a2f3beb40be1ad61bb57b714, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -846,6 +854,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1198131458}
+    - target: {fileID: 6981747933989706270, guid: 51920731a2f3beb40be1ad61bb57b714, type: 3}
+      propertyPath: m_text
+      value: 'Sube el hombro derecho.
+
+        (Despacio, por favor)'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6981747933989706270, guid: 51920731a2f3beb40be1ad61bb57b714, type: 3}
+      propertyPath: m_lineSpacing
+      value: -48.11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
