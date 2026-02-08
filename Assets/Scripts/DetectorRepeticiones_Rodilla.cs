@@ -14,7 +14,7 @@ public class DetectorRepeticiones_Rodilla : MonoBehaviour
     public TMPro.TMP_Text TXT_Instruccion_Estado;
 
     private Animator animator;
-    private Transform ManoDerecha;
+    private Transform Pecho;
     private Transform RodillaDerecha;
 
     string EstadoActual, EstadoPasado, Instruccion;
@@ -26,26 +26,26 @@ public class DetectorRepeticiones_Rodilla : MonoBehaviour
         // Validaciones iniciales de componentes - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
     {
         animator = GetComponent<Animator>();                                //Ubica el cuerpo
-        ManoDerecha = animator.GetBoneTransform(HumanBodyBones.Chest);   //Ubica el pecho
+        Pecho = animator.GetBoneTransform(HumanBodyBones.Chest);   //Ubica el pecho
         RodillaDerecha = animator.GetBoneTransform(HumanBodyBones.RightLowerLeg); //Ubica la rodilla
 
         // Si no los encuentra, avisa.
-        if (ManoDerecha == null || RodillaDerecha == null){Debug.LogError("No se encontraron los huesos necesarios");}
+        if (Pecho == null || RodillaDerecha == null){Debug.LogError("No se encontraron los huesos necesarios");}
 
     }
 
     public void Update() //------------------------ Esta funcion va midiendo e imprimiendo
     {
-        if (ManoDerecha == null || RodillaDerecha == null) return; // Si no los encuentra, no hace na'
-        float distanciaActual = Vector3.Distance(ManoDerecha.position, RodillaDerecha.position);
+        if (Pecho == null || RodillaDerecha == null) return; // Si no los encuentra, no hace na'
+        float distanciaActual = Vector3.Distance(Pecho.position, RodillaDerecha.position);
         print("La distancia entre la mano derecha y la rodilla derecha es: " + distanciaActual);
 
         // Todo esto es la maquinita de estados.
-        if (distanciaActual >= 0.950)
+        if (distanciaActual <= 0.460)
         {
             EstadoActual = "Arriba";
             Instruccion = "Abajo";
-        } else if (distanciaActual <= 0.420)            
+        } else if (distanciaActual >= 0.600)            
         {                                               
             EstadoActual = "Abajo";
             Instruccion = "Arriba";
